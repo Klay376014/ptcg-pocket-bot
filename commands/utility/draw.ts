@@ -156,7 +156,7 @@ export default {
 						rarityMap[card.rarityCode as keyof typeof rarityMap] || '';
 					return `${card.label.eng}   ${rarityIcon}`;
 				});
-				const modeText = mode === 'fun_mode' ? '（歡樂模式）' : '（一般模式）';
+				const modeText = mode === 'funMode' ? '（歡樂模式）' : '（一般模式）';
 				const messageContent = `${
 					interaction.user.displayName
 				} 從 ${selectedPack} 卡包${modeText}中抽出了下列卡片：\r\n- ${cardList.join(
