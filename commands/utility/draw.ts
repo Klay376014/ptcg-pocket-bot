@@ -47,7 +47,7 @@ const packChoices = [
 	{ name: 'Eevee', value: 'Eevee' },
 ];
 
-const normalModePacks = packChoices.slice(0, 3);
+const normalModePacks = packChoices
 
 export default {
 	data: new SlashCommandBuilder()
