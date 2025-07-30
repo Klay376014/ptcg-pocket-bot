@@ -33,18 +33,20 @@ const rarityMap = {
 };
 
 const packChoices = [
-	{ name: 'Pikachu', value: 'Pikachu' },
-	{ name: 'Charizard', value: 'Charizard' },
-	{ name: 'Mewtwo', value: 'Mewtwo' },
-	{ name: 'Mew', value: 'Mew' },
-	{ name: 'Dialga', value: 'Dialga' },
-	{ name: 'Palkia', value: 'Palkia' },
-	{ name: 'Arceus', value: 'Arceus' },
-	{ name: 'Shining', value: 'Shining' },
-	{ name: 'Lunala', value: 'Lunala' },
-	{ name: 'Solgaleo', value: 'Solgaleo' },
-	{ name: 'Extradimensional', value: 'Extradimensional' },
-	{ name: 'Eevee', value: 'Eevee' },
+	{ name: '最強的基因 - 皮卡丘', value: 'Pikachu' },
+	{ name: '最強的基因 - 噴火龍', value: 'Charizard' },
+	{ name: '最強的基因 - 超夢', value: 'Mewtwo' },
+	{ name: '幻遊島', value: 'Mew' },
+	{ name: '時空激鬥 - 帝牙盧卡', value: 'Dialga' },
+	{ name: '時空激鬥 - 帕路奇亞', value: 'Palkia' },
+	{ name: '超克之光', value: 'Arceus' },
+	{ name: '嗨放異彩', value: 'Shining' },
+	{ name: '雙天之守護者 - 索爾迦雷歐', value: 'Solgaleo' },
+	{ name: '雙天之守護者 - 露奈雅拉', value: 'Lunala' },
+	{ name: '異次元危機', value: 'Extradimensional' },
+	{ name: '伊布花園', value: 'Eevee' },
+	{ name: '天與海的指引 - 鳳王', value: 'Ho-Oh' },
+	{ name: '天與海的指引 - 洛奇亞', value: 'Lugia' },
 ];
 
 const normalModePacks = packChoices
@@ -114,12 +116,10 @@ export default {
 				time: 60_000,
 			});
 
-      console.log(packInteraction)
 			const [mode, selectedPack] = packInteraction.customId.split('_');
 
-      console.log(mode, selectedPack)
 			await packInteraction.update({
-				content: `你選擇的是：${selectedPack} 卡包...`,
+				content: `你選擇的卡包是：${packChoices.find(pack => pack.value === selectedPack)?.name ?? ''} ...`,
 				components: [],
 			});
 
